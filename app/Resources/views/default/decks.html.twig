@@ -1,0 +1,79 @@
+{% extends "default/list_base.html.twig" %}
+
+{% block search_form %}
+{{ parent() }}
+
+<div class="form-group">
+    <ul class="list-group keywords">
+        <li class="list-group-item">
+            rayne
+            <span class="badge">20</span>
+        </li>
+        <li class="list-group-item">
+            topmount
+            <span class="badge">132</span>
+        </li>
+        <li class="list-group-item">
+            stiff
+            <span class="badge">67</span>
+        </li>
+    </ul>
+</div>
+
+<div class="form-group">
+    <label>
+        Length
+    </label>
+    <input name="length"
+           type="text"
+           class="form-control"
+           value=""
+           data-provide="slider"
+           data-slider-min="18"
+           data-slider-max="60"
+           data-slider-step="1"
+           data-slider-value="[18,60]" />
+</div>
+
+<div class="form-group">
+    <label>
+        Width
+    </label>
+    <input name="width"
+           type="text"
+           class="form-control"
+           value=""
+           data-provide="slider"
+           data-slider-min="6"
+           data-slider-max="11"
+           data-slider-step="1"
+           data-slider-value="[6,11]" />
+</div>
+
+<div class="form-group">
+    <label>
+        Wheelbase
+    </label>
+    <input name="wheelbase"
+           type="text"
+           class="form-control"
+           value=""
+           data-provide="slider"
+           data-slider-min="18"
+           data-slider-max="60"
+           data-slider-step="1"
+           data-slider-value="[18,60]" />
+</div>
+{% endblock %}
+
+{% block search_result %}
+    <div class="row">
+        {% include "default/_list_item.html.twig" %}
+        {% include "default/_list_item.html.twig" %}
+        {% include "default/_list_item.html.twig" %}
+        {% include "default/_list_item.html.twig" %}
+        {% include "default/_list_item.html.twig" %}
+        {% include "default/_list_item.html.twig" %}
+        {% include "default/_list_item.html.twig" %}
+    </div>
+{% endblock %}

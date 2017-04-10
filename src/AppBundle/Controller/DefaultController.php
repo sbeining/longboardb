@@ -16,4 +16,12 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
     }
+
+    /**
+     * @Route("/decks", name="decks")
+     * @Template("default/decks.html.twig")
+     */
+    public function decksAction(Request $request)
+    {
+    }
 }
