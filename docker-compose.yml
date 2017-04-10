@@ -1,0 +1,33 @@
+version: "2"
+
+services:
+  web:
+    image: nginx:latest
+    volumes:
+      - ./:/var/www/html
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    links:
+      - php
+
+  php:
+    build: ./php-fpm
+    user: www-data
+    volumes:
+      - ./:/var/www/html
+      - php_var:/var/www/html/var
+      - php_vendor:/var/www/html/vendor
+
+  db:
+    image: mariadb:latest
+    volumes:
+      - data:/var/lib/mysql:rw
+    environment:
+      - MYSQL_DATABASE=longboardb
+      - MYSQL_USER=longboardb
+      - MYSQL_PASSWORD=longboardb
+      - MYSQL_ROOT_PASSWORD=password
+
+volumes:
+  data:
+  php_var:
+  php_vendor:
