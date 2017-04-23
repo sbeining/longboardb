@@ -1,0 +1,8 @@
+<ol class="breadcrumb">
+    <li><a href="{{ path('homepage') }}"><span class="glyphicon glyphicon-home" /></a></li>
+    {% for route, link in links %}
+        <li>
+            <a href="{{ path(route, link.parameters) }}">{{ link.label }}</a>
+        </li>
+    {% endfor %}
+</ol>
